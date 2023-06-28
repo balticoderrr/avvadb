@@ -56,12 +56,18 @@ const LatestAddresses: React.FC<LatestAddressesProps> = ({ addresses }) => {
           flex-col
           gap-y-2
           mt-4
-          px-3
+          px-3  
       "
       >
-        {addresses.map((item) => (
-          <MediaItem key={item.id} data={item} />
-        ))}
+        {!user ? (
+          <div className="mt-4 text-neutral-400">
+            Prisijunkite norėdami matyti adresus.
+          </div>
+        ) : addresses.length > 0 ? (
+          addresses.map((item) => <MediaItem key={item.id} data={item} />)
+        ) : (
+          <div className="mt-4 text-neutral-400">Adresų nėra.</div>
+        )}
       </div>
     </div>
   );

@@ -74,6 +74,7 @@ const DeleteModal = () => {
           gap-x-4
       "
         onSubmit={handleSubmit(onSubmit)}
+        method="DELETE"
       >
         <Button disabled={isLoading} onClick={deleteModal.onClose}>
           Atšaukti

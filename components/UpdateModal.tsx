@@ -57,7 +57,6 @@ const UpdateModal = () => {
       const { data: selectedData, error: supabaseError } = await supabaseClient
         .from("addresses")
         .update({
-          user_id: user.id,
           title: values.title,
           codes: values.codes,
           details: values.details,
@@ -97,6 +96,7 @@ const UpdateModal = () => {
           gap-y-4
       "
         onSubmit={handleSubmit(onSubmit)}
+        method="UPDATE"
       >
         <Input
           id="title"
